@@ -4,10 +4,9 @@ import prisma from '@/utils/utils';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
-export async function POST(req: NextRequest,  { params }: { params: { id: string } }) {
+export async function POST(req: NextRequest,   context: { params: { id: string } }) {
   const { amount } = await req.json(); // Read the request body
-const Params=await params
-const {id}=Params
+  const { id } = context.params;
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
