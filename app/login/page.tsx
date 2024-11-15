@@ -4,7 +4,7 @@ import { Signin_Google } from '@/server-actions/auth/Signin';
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 
-export const LoginPage: React.FC = () => {
+const LoginPage: React.FC = () => {
   return (
     <Wrapper className="my-5 flex min-h-[70vw] items-center justify-center border border-gray-200 bg-white bg-opacity-30 text-2xl shadow-lg backdrop-blur-lg">
       <form action={Signin_Google}>
