@@ -5,7 +5,7 @@ import LoadingSkeleton from '@/Components/LoadingSkeleton';
 import { OrderType } from '@/types/dbTypesClient';
 import Image from 'next/image';
 
-export const fetchOrders = async () => {
+const fetchOrders = async () => {
   const response = await fetch('/orders/api', {
     method: 'GET',
   });
