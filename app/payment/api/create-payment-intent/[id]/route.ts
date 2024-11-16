@@ -3,7 +3,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/utils/utils';
 
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+  apiVersion: '2024-10-28.acacia', // Replace with your version
+});
 
 export const POST = async (
   req: NextRequest, 
