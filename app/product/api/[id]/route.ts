@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/utils/utils';
 
-export const GET = async (request: NextRequest) => {
- 
-  const { pathname } = new URL(request.url);
-  const id = pathname.split('/').pop(); 
+export const GET = async (request: NextRequest,  { params}: { params: Promise<{ id: string }> }) => {
+  
+  const  id  = (await params).id
 
 
   if (!id) {

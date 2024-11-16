@@ -3,10 +3,10 @@ import prisma from "@/utils/utils";
 
 export async function PUT(
   req: Request,
-  { params }: { params: { id: string } }
+  { params}: { params: Promise<{ id: string }> }
 ) {
-  const { id } = params;
-
+  const  id  = (await params).id
+  
   if (!id) {
     console.log(
       "Payment intent is required",

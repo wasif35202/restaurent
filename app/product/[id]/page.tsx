@@ -17,9 +17,9 @@ const getData = async (id: string): Promise<Product> => {
   return res.json();
 };
 
-const SingleProductPage = async ({ params }: { params: { id: string } }) => {
-  // Await params before destructuring
-  const { id } = await params;
+const SingleProductPage = async ( { params}: { params: Promise<{ id: string }> }) => {
+
+const  id  = (await params).id
 
   const singleProduct: Product = await getData(id);
 
