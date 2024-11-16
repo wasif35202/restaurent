@@ -4,7 +4,7 @@ import Wrapper from '@/Components/Wrapper';
 import { UserType } from '@/types/dbTypesClient'; // Import UserType from types file
 import Image from 'next/image';
 
-const getUsers = async (): Promise<UserType[]> => {
+const getUsers = async () => {
   const res = await fetch('http://localhost:3000/admin/users/api', {
     cache: 'no-store',
   });

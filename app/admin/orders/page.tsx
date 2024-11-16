@@ -2,7 +2,7 @@ import Wrapper from '@/Components/Wrapper';
 import { OrderType } from '@/types/dbTypesClient'; // Import OrderType
 
 // Function to fetch orders
-const getOrders = async (): Promise<OrderType[]> => {
+const getOrders = async () => {
   const res = await fetch('http://localhost:3000/admin/orders/api', {
     cache: 'no-store',
   });
